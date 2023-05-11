@@ -41,28 +41,47 @@ class _SideMenuState extends State<SideMenu> {
           ),
         ),
         const Divider(),
-        FilledButton(
-          onPressed: () {
-            showAboutDialog(
-              context: context,
-              children: [
-                const Text(
-                    'Id ea commodo esse reprehenderit officia nisi dolor aliquip non.')
-              ],
-            );
-          },
-          child: const Text('Licencias usadas'),
-        ),
-        TextButton.icon(
-          label: const Text('Logout'),
-          icon: Icon(Icons.logout_outlined, color: colors.primary),
-          onPressed: () {
-            context.push(
-              '/login-view',
-            );
-          },
-        ),
+        const _LicensesButton(),
+        _LogoutButton(colors: colors),
       ],
+    );
+  }
+}
+
+class _LogoutButton extends StatelessWidget {
+  const _LogoutButton({
+    required this.colors,
+  });
+
+  final ColorScheme colors;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+      label: const Text('Logout'),
+      icon: Icon(Icons.logout_outlined, color: colors.primary),
+      onPressed: () {
+        context.push(
+          '/login-view',
+        );
+      },
+    );
+  }
+}
+
+class _LicensesButton extends StatelessWidget {
+  const _LicensesButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        showAboutDialog(
+          context: context,
+          children: [const Text('Deseas ver las licencias de la apliacion?')],
+        );
+      },
+      child: const Text('Licencias'),
     );
   }
 }
