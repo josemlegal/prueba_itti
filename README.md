@@ -9,7 +9,9 @@ Aplicacion Mobile con Clean Architecture desarrollada dada la premisa de la prue
 - Seleccion the temas.
 - Onboarding View.
 - NavigationDrawer.
+- Licenses
 - Clean Architecture.
+
 
 ## Requisitos
 
