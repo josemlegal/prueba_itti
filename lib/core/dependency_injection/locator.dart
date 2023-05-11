@@ -7,6 +7,10 @@ import 'package:stacked_services/stacked_services.dart';
 final GetIt locator = GetIt.instance;
 
 void setupLocator() {
+  locator.registerLazySingleton<HttpService>(
+    () => HttpService(),
+  );
+
   locator.registerLazySingleton<UserRepository>(
     () => UserRepositoryImplementation(
       httpService: locator<HttpService>(),
