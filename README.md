@@ -5,9 +5,10 @@ Aplicacion Mobile con Clean Architecture desarrollada dada la premisa de la prue
 ## Features
 - Login con validaciones.
 - Consultas http.
-- Dark/Light mode
+- Dark/Light mode.
 - Seleccion the temas.
-- Onboarding View
+- Onboarding View.
+- NavigationDrawer.
 - Clean Architecture.
 
 ## Requisitos
