@@ -1,3 +1,7 @@
-# prueba_itti
+# Prueba ITTI
 
-A new Flutter project.
+Aplicacion Mobile con Clean Architecture desarrollada dada la premisa de la prueba tecnica enviada.
+
+## Requisitos
+
+Version de Flutter: 3.7.12
