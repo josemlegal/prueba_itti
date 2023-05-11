@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class HttpService {
   final _dio = Dio();
-  String baseUrl = dotenv.env['SERVER_ADDRESS']!;
+  String baseUrl = 'https://reqres.in/api';
 
   HttpService() {
     _dio.options.baseUrl = baseUrl;
