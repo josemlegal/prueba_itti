@@ -11,6 +11,7 @@ Aplicacion Mobile con Clean Architecture desarrollada dada la premisa de la prue
 - NavigationDrawer.
 - Licenses
 - Clean Architecture.
+- Material App 3.
 
 
 ## Requisitos
