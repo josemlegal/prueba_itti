@@ -1,22 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:prueba_itti/core/dependency_injection/locator.dart';
+import 'package:prueba_itti/core/router/router.dart';
+import 'package:prueba_itti/core/theme/app.theme.dart';
 
-Future<void> main() async {
-  await dotenv.load(fileName: '.env');
-  runApp(const MainApp());
+import 'presentation/controllers/settings_view_controller.dart';
+
+void main() {
+  runApp(
+    const ProviderScope(
+      child: MainApp(),
+    ),
+  );
+  setupLocator();
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+  Widget build(BuildContext context, ref) {
+    final AppTheme appTheme = ref.watch(themeNotifierProvider);
+
+    return MaterialApp.router(
+      themeMode: appTheme.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      title: 'Itti App',
+      routerConfig: appRouter,
+      debugShowCheckedModeBanner: false,
+      theme: appTheme.getTheme(),
     );
   }
 }
