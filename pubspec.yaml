@@ -18,7 +18,7 @@ dependencies:
   hooks_riverpod: ^2.3.6
   riverpod: ^2.3.6
   stacked_services: ^1.0.2
-  url_launcher: ^6.0.17
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_lints: ^2.0.0

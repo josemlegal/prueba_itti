@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_itti/domain/models/user_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ListOfUsers extends StatelessWidget {
   final Function(User) onTap;
   final List<User> users;
 
   const ListOfUsers({super.key, required this.users, required this.onTap});
+
+  _launchURL() async {
+    Uri url = Uri.parse('https://www.google.com');
+    if (await launchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +34,15 @@ class ListOfUsers extends StatelessWidget {
                   onTap(user);
                 },
                 title: Text('${user.firstName} ${user.lastName}'),
-                subtitle: RichText(
-                  text: TextSpan(
-                    text: user.email,
-                    style: TextStyle(
-                      color: colors.brightness == Brightness.dark
-                          ? Colors.white
-                          : Colors.black,
-                    ),
-                    // recognizer: TapGestureRecognizer()
-                    //   ..onTap = () {
-                    //     launch(user.email);
-                    //   },
-                  ),
-                ),
+                subtitle: InkWell(
+                    onTap: _launchURL,
+                    child: Text(
+                      user.email,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.blue,
+                      ),
+                    )),
                 leading: CircleAvatar(
                   backgroundImage: NetworkImage(user.avatar),
                 ),
