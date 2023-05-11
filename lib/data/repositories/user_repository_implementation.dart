@@ -11,15 +11,16 @@ class UserRepositoryImplementation implements UserRepository {
       : _httpService = httpService;
 
   @override
-  Future<List<User>> getUsers() {
-    return _call(
+  Future<List<User>> getUsers() async {
+    return await _call(
       () async {
         final response = await _httpService.dio.get(
           "/users",
         );
-        final data = response.data as List;
-        final users = data.map((e) => User.fromJson(e)).toList();
-        return users;
+
+        return (response.data['data'] as List)
+            .map((user) => User.fromJson(user))
+            .toList();
       },
       errorMessage: "Error while fetching users",
     );
