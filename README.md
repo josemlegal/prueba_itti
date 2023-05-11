@@ -14,6 +14,9 @@ Aplicacion Mobile con Clean Architecture desarrollada dada la premisa de la prue
 ## Requisitos
 
 Version de Flutter: 3.7.12
+
+
+## Screeshots
 ![Screenshot from 2023-05-11 13-26-27](https://github.com/josemlegal/prueba_itti/assets/96390036/ab4eec8f-2eeb-4fe9-b45b-01eca82d3681)
 ![Screenshot from 2023-05-11 13-27-11](https://github.com/josemlegal/prueba_itti/assets/96390036/df7fd778-4b5b-4073-8bba-ad5ce6677d4b)
 ![Screenshot from 2023-05-11 13-27-43](https://github.com/josemlegal/prueba_itti/assets/96390036/34aa114b-ba74-4f9a-b1cf-16910223ad5b)
