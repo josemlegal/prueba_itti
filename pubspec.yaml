@@ -7,15 +7,18 @@ environment:
   sdk: ">=2.19.6 <3.0.0"
 
 dependencies:
+  animate_do: ^3.0.2
   dio: ^5.1.2
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.0.2
+  flutter_riverpod: ^2.3.6
   get_it: ^7.6.0
   go_router: ^7.0.0
   hooks_riverpod: ^2.3.6
   riverpod: ^2.3.6
   stacked_services: ^1.0.2
+  url_launcher: ^6.0.17
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -27,3 +30,20 @@ flutter:
 
   assets:
     - .env
+    - assets/images/
+
+  fonts:
+    - family: Campton
+      fonts:
+        - asset: assets/fonts/Campton-ExtraBold.otf
+          weight: 700
+        - asset: assets/fonts/Campton-Bold.otf
+          weight: 600
+        - asset: assets/fonts/Campton-SemiBold.otf
+          weight: 500
+        - asset: assets/fonts/Campton-Medium.otf
+          weight: 400
+        - asset: assets/fonts/Campton-Light.otf
+          weight: 300
+        - asset: assets/fonts/Campton-ExtraLight.otf
+          weight: 200
