@@ -113,7 +113,7 @@ class _Slide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final titleStyle = Theme.of(context).textTheme.displayLarge;
-    final captionStyle = Theme.of(context).textTheme.headlineSmall;
+    final captionStyle = Theme.of(context).textTheme.bodyMedium;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
