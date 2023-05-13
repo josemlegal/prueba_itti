@@ -61,11 +61,15 @@ class _UsernameInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return TextFormField(
       inputFormatters: [FilteringTextInputFormatter.deny(RegExp(r'\d'))],
       validator: loginController.textInputEmptyValidator,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         labelText: 'Username',
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: colors.primary),
+        ),
       ),
     );
   }
@@ -80,14 +84,18 @@ class _PasswordInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return TextFormField(
       inputFormatters: [
         LengthLimitingTextInputFormatter(5),
       ],
       validator: loginController.textInputEmptyValidator,
       keyboardType: TextInputType.number,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         labelText: 'Password',
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: colors.primary),
+        ),
       ),
     );
   }
