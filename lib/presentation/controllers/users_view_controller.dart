@@ -21,12 +21,12 @@ class UsersViewController extends ChangeNotifier {
       : _snackbarService = snackbarService,
         _userRepository = userRepository;
 
-  void _handleError({String? title, String? message}) {
-    _snackbarService.showSnackbar(
-      title: title ?? "Something went wrong",
-      message: message ?? "Please try again later",
-    );
-  }
+  // void _handleError({String? title, String? message}) {
+  //   _snackbarService.showSnackbar(
+  //     title: title ?? "Something went wrong",
+  //     message: message ?? "Please try again later",
+  //   );
+  // }
 
   Future<void> getUsers() async {
     try {
@@ -35,7 +35,7 @@ class UsersViewController extends ChangeNotifier {
       isLoading = false;
       notifyListeners();
     } catch (e) {
-      _handleError(title: "Can't get the users!");
+      // _handleError(title: "Can't get the users!");
     }
   }
 
